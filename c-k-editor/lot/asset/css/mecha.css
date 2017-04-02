@@ -1,0 +1,58 @@
+.cke_reset_all,
+.cke_reset_all *,
+.cke_reset_all a,
+.cke_reset_all textarea {
+  font-family:inherit !important;
+  color:inherit !important;
+}
+.cke,
+.cke_top,
+.cke_bottom,
+.cke_toolbar_separator,
+.cke_combo:after,
+.cke_dialog_title,
+.cke_dialog_footer,
+.cke_menubutton,
+.cke_menubutton .cke_menuseparator {
+  color:#000 !important;
+  border-color:#000 !important;
+  background:#000 !important;
+}
+.cke_top,
+.cke_bottom,
+.cke_dialog_title,
+.cke_dialog_footer,
+.cke_panel {background:#ffa !important}
+a.cke_dialog_ui_button,
+a.cke_dialog_ui_button:focus,
+a.cke_dialog_ui_button:hover,
+a.cke_dialog_ui_button:active {
+  background:#00a !important;
+  color:#fff !important;
+  border-color:transparent !important;
+  border-radius:0 !important;
+}
+a.cke_dialog_ui_button:active {background:#a00 !important}
+.cke_dialog_body {border:1px solid #000 !important}
+.cke_dialog .cke_resizer {border-color:transparent #000 #000 transparent !important}
+a.cke_button_off:hover,
+a.cke_button_off:focus,
+a.cke_button_off:active,
+.cke_combo_on a.cke_combo_button,
+.cke_combo_off a.cke_combo_button:hover,
+.cke_combo_off a.cke_combo_button:focus,
+.cke_combo_off a.cke_combo_button:active {
+  background:rgba(0,0,0,.05) !important;
+  border-color:#000 !important;
+}
+a.cke_button_on,
+.cke_combo_on a.cke_combo_button {
+  background:rgba(0,0,0,.2) !important;
+  border-color:#000 !important;
+}
+.cke_menubutton:hover,
+.cke_menubutton:focus,
+.cke_menubutton:active {background:rgba(0,0,0,.05) !important}
+a.cke_path_item:hover,
+a.cke_path_item:focus,
+a.cke_path_item:active {background:rgba(0,0,0,.05) !important}
