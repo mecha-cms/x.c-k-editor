@@ -56,3 +56,18 @@ a.cke_button_on,
 a.cke_path_item:hover,
 a.cke_path_item:focus,
 a.cke_path_item:active {background:rgba(0,0,0,.05) !important}
+.cke_panel_grouptitle {
+  color:#000 !important;
+  border-bottom:1px solid #000 !important;
+  background:#ffa !important;
+}
+.cke_panel_listItem a:focus {outline:0 !important}
+.cke_panel_listItem.cke_selected a,
+.cke_panel_listItem a:hover,
+.cke_panel_listItem a:focus,
+.cke_panel_listItem a:active {background:#def !important}
+a.cke_toolbox_collapser {color:#000 !important}
+.cke_menubutton_icon {background:#fff !important}
+.cke_menubutton:hover .cke_menubutton_icon,
+.cke_menubutton:focus .cke_menubutton_icon,
+.cke_menubutton:active .cke_menubutton_icon {background:rgba(0,0,0,.05) !important}
