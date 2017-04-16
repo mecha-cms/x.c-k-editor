@@ -55,7 +55,7 @@ a.cke_button_on,
 .cke_menubutton:active {background:rgba(0,0,0,.05) !important}
 a.cke_path_item:hover,
 a.cke_path_item:focus,
-a.cke_path_item:active {background:rgba(0,0,0,.05) !important}
+a.cke_path_item:active {background:rgba(0,0,0,.2) !important}
 .cke_panel_grouptitle {
   color:#000 !important;
   border-bottom:1px solid #000 !important;

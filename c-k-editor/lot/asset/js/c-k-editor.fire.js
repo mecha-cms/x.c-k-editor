@@ -1,10 +1,12 @@
 (function($) {
     if (!$) return;
-    var editors = $.forms.editor,
-        forms = $.forms.lot, i, j, k, l;
-    for (i in editors) {
-        for (j in editors[i]) {
-            k = editors[i][j];
+    var forms = $.forms,
+        lot = forms.$,
+        CM = forms.CM,
+        i, j, k, l;
+    for (i in CM) {
+        for (j in CM[i]) {
+            k = CM[i][j];
             if (!k.getTextArea) continue;
             l = k.getTextArea();
             if (l.nodeName.toLowerCase() === 'textarea' && l.classList.contains('editor') && l.getAttribute('data-type') === 'HTML') {
@@ -12,11 +14,13 @@
             }
         }
     }
-    for (i in forms) {
-        for (j in forms[i]) {
-            k = forms[i][j];
+    forms.CKE = {};
+    for (i in lot) {
+        forms.CKE[i] = {};
+        for (j in lot[i]) {
+            k = lot[i][j];
             if (k.nodeName.toLowerCase() === 'textarea' && k.classList.contains('editor') && k.getAttribute('data-type') === 'HTML') {
-                CKEDITOR.replace(k);
+                forms.CKE[i][j] = CKEDITOR.replace(k);
             }
         }
     }
