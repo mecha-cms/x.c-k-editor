@@ -5,4 +5,4 @@
             config[i] = $.CKE[i];
         }
     };
-})(Panel);
+})(window.PANEL);

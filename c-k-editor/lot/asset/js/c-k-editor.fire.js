@@ -2,7 +2,7 @@
     if (!$) return;
     var forms = $.forms,
         lot = forms.$,
-        CM = forms.CM,
+        CM = forms.CM || {},
         i, j, k, l;
     for (i in CM) {
         for (j in CM[i]) {
@@ -24,4 +24,4 @@
             }
         }
     }
-})(Panel);
+})(window.PANEL);
