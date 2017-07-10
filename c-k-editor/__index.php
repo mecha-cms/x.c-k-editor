@@ -3,7 +3,6 @@
 Hook::set('on.panel.ready', function() {
     $__id = Path::B(__DIR__);
     $__state = Config::get('page.editor', "");
-    Config::set('panel.f.page.editors.' . $__id, 'CKEditor');
     if ($__state === $__id) {
         Hook::set('panel.js', function($__content) {
             return $__content . '!function($){$.CKE=' . json_encode(Extend::state(__DIR__, [])) . '}(window.PANEL);';

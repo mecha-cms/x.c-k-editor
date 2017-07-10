@@ -1,0 +1,6 @@
+---
+type: YAML
+...
+
+o_editors:
+  c-k-editor: CKEditor
