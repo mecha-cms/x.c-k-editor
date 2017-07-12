@@ -2,5 +2,5 @@
 type: YAML
 ...
 
-o_editors:
+o_editor:
   c-k-editor: CKEditor
