@@ -7,7 +7,7 @@ link: http://ckeditor.com
 version: 1.2.1
 ...
 
-This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Site › Page_ group with _CKEditor_.
+This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Common_ tab with _CKEditor_.
 
 ### Dependency
 
