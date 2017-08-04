@@ -1,25 +1,16 @@
 <?php
 
 return [
-    'language' => explode('-', Config::get('language', 'en-us'))[0],
-    'toolbarGroups' => [
-        [
-            'name' => 'mecha',
-            'groups' => [
-                'styles',
-                'cleanup',
-                'basicstyles',
-                'links',
-                'insert',
-                'blocks',
-                'list',
-                'mode',
-                'undo',
-            ]
-        ]
+    'skin' => 'moono-lisa',
+    'uiColor' => '#ffffaa',
+    'toolbar' => [
+        ['Undo', 'Redo'],
+        ['Bold', 'Italic', 'Underline', 'RemoveFormat'],
+        ['SpecialChar', 'Link', 'Image', 'Table', 'HorizontalRule'],
+        ['NumberedList', 'BulletedList', 'Blockquote', 'Indent', 'Outdent'],
+        ['Styles']
     ],
     'height' => '30em',
-    'removePlugins' => 'resize',
-    'removeButtons' => 'Font,FontSize,CopyFormatting,Underline,Strike,Smiley,PageBreak,Iframe,Flash,CreateDiv',
-    'removeDialogTabs' => 'image:advanced;link:advanced;table:advanced'
+    'filebrowserImageBrowseUrl' => '/' . Extend::state('panel', 'path', 'panel') . '/::g::/asset?layout=0',
+    'filebrowserImageUploadPath' => ASSET
 ];

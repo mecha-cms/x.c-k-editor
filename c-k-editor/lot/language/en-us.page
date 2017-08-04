@@ -4,3 +4,12 @@ type: YAML
 
 o_editor:
   c-k-editor: CKEditor
+
+__:
+  panel:
+    CKE:
+      stylesSet:
+        image_center: Image (center)
+        image_left: Image (left)
+        image_right: Image (right)
+        table_border: Table (bordered)

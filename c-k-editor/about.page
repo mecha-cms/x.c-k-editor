@@ -4,7 +4,7 @@ description: CKEditor is a free, open-source HTML text editor designed to simpli
 author: Taufik Nurrohman
 type: Markdown
 link: http://ckeditor.com
-version: 1.2.1
+version: 1.3.0
 ...
 
 This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Common_ tab with _CKEditor_.
