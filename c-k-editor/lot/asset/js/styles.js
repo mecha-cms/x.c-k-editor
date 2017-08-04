@@ -1,6 +1,6 @@
 (function($, CKE) {
     var lang = typeof $.languages.$.__.panel.CKE.stylesSet !== "undefined" ? $.languages.$.__.panel.CKE.stylesSet : {},
-        format = (CKE.lang[$.language.split('-')[0] || 'en']).format || {},
+        format = (CKE.lang[($.language || 'en-us').split('-')[0]]).format || {},
         formats = [],
         formats_tags = [
             // Block Style(s)
@@ -29,7 +29,7 @@
     for (i in formats_tags) {
         j = formats_tags[i];
         formats.push(typeof j === "string" ? {
-            name: format['tag_' + j] || '&lt;' + j + '&gt;',
+            name: format['tag_' + j] || j,
             element: j
         } : j);
     }
