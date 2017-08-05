@@ -18,6 +18,8 @@
         config.filebrowserImageUploadUrl = '/-u/c-k-editor/image?token=' + $.token;
         config.filebrowserWindowWidth = '50%';
         config.filebrowserWindowHeight = '50%';
+        config.dialog_magnetDistance = 0;
+        config.disableObjectResizing = true;
         // `lot\extend\c-k-editor\lot\worker\ckeditor`
         config.contentsCss = CKE.getUrl('../../asset/css/content.min.css');
         for (i in $.CKE) {

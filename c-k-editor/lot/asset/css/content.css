@@ -1,15 +1,45 @@
-@import url('../../../../panel/lot/asset/css/panel.min.css?v=1');
-body {
+@import url('../../../../panel/lot/asset/css/panel.min.css?v=2');
+
+pre {
+  padding: .5em 1em;
+  background: #000;
+  color: #fff;
+}
+
+html body {
   padding: 1em;
 }
 
-body a {
+html body a {
   text-decoration: underline;
 }
 
-body img {
+html body img {
   width: auto;
   height: auto;
+}
+
+img.left {
+  margin: .25em 1em .5em 0;
+}
+
+img.right {
+  margin: .25em 0 .5em 1em;
+}
+
+img.center {
+  display: block;
+}
+
+table th,
+table td {
+  border: 1px dotted #999;
+}
+
+.table th,
+.table td {
+  border: 1px solid;
+  border-collapse: collapse;
 }
 
 .cke_editable {

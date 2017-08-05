@@ -9,7 +9,24 @@ __:
   panel:
     CKE:
       stylesSet:
-        image_center: Image (center)
-        image_left: Image (left)
-        image_right: Image (right)
+        code: Code
+        del: Delete
+        h1: Title 1
+        h2: Title 2
+        h3: Title 3
+        h4: Title 4
+        h5: Title 5
+        h6: Title 6
+        img_center: Image (center)
+        img_left: Image (left)
+        img_right: Image (right)
+        ins: Insert
+        kbd: Keyboard
+        mark: Mark
+        p: Paragraph
+        pre: Block
+        small: Small
+        sub: Subscript
+        sup: Superscript
         table_border: Table (bordered)
+        var: Variable

@@ -1,6 +1,5 @@
 (function($, CKE) {
     var lang = typeof $.languages.$.__.panel.CKE.stylesSet !== "undefined" ? $.languages.$.__.panel.CKE.stylesSet : {},
-        format = (CKE.lang[($.language || 'en-us').split('-')[0]]).format || {},
         formats = [],
         formats_tags = [
             // Block Style(s)
@@ -9,27 +8,27 @@
             'sub', 'sup', 'mark', 'small', 'code', 'kbd', 'var', 'del', 'ins',
             // Object Style(s)
             {
-                name: lang.image_left,
+                name: lang.img_left,
                 element: 'img',
-                attributes: {'class': 'align-left'}
+                attributes: {'class': 'left'}
             }, {
-                name: lang.image_center,
+                name: lang.img_center,
                 element: 'img',
-                attributes: {'class': 'align-center'}
+                attributes: {'class': 'center'}
             }, {
-                name: lang.image_right,
+                name: lang.img_right,
                 element: 'img',
-                attributes: {'class': 'align-right'}
+                attributes: {'class': 'right'}
             }, {
                 name: lang.table_border,
                 element: 'table',
-                attributes: {'class': 'border'}
+                attributes: {'class': 'table'}
             }
         ], i, j;
     for (i in formats_tags) {
         j = formats_tags[i];
         formats.push(typeof j === "string" ? {
-            name: format['tag_' + j] || j,
+            name: lang[j] || j,
             element: j
         } : j);
     }
