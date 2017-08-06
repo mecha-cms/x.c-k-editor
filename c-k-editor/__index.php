@@ -25,7 +25,7 @@ if ($__asset_P && strpos('/' . $url->path . '/', '/' . trim($__asset_P, '/') . '
         Hook::set('on.panel.ready', function() {
             Config::set('panel.layout', 0);
         });
-        Hook::set('shield.before', function() use($language, $__asset_B, $__fn) {
+        Hook::set('route.enter', function() use($language, $__asset_B, $__fn) {
             $__id = uniqid();
             Hook::set('panel.a.' . $__asset_B . 's', function() {
                 return [];
