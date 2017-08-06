@@ -25,7 +25,7 @@ if ($__asset_P && strpos('/' . $url->path . '/', '/' . trim($__asset_P, '/') . '
         Hook::set('on.panel.ready', function() {
             Config::set('panel.layout', 0);
         });
-        Hook::set('route.enter', function() use($language, $__asset_B, $__fn) {
+        Hook::set('shield.enter', function() use($language, $__asset_B, $__fn) {
             $__id = uniqid();
             Hook::set('panel.a.' . $__asset_B . 's', function() {
                 return [];
@@ -42,6 +42,6 @@ if ($__asset_P && strpos('/' . $url->path . '/', '/' . trim($__asset_P, '/') . '
             Hook::set('panel.js', function($__content) use($__fn, $__id) {
                 return $__content . 'function CKE_' . $__id . '($){var w=window.opener;return w.focus(),w.CKEDITOR.tools.callFunction(' . $__fn . ',$.href),window.close(),false}';
             });
-        });
+        }, 0);
     }
 }
