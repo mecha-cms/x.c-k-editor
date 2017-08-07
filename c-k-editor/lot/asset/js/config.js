@@ -13,6 +13,7 @@
         config.language = ($.language || 'en-us').split('-')[0];
         config.removeDialogTabs = 'link:advanced;image:advanced;table:advanced';
         config.removeFormatTags = 'a,b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,span,strike,strong,sub,sup,tt,u,var';
+        config.extraAllowedContent = 'abbr[title];blockquote(*);code(*);dfn[title];dl;dt;dd;figure(*);img(*);figcaption;p(*);pre(*);table(*);td(*);th(*);tr(*)';
         config.filebrowserImageBrowseUrl = '/' + $.url.path.split('/')[0] + '/::g::/asset?layout=0';
         config.filebrowserImageBrowseLinkUrl = false;
         config.filebrowserImageUploadUrl = '/-u/c-k-editor/image?token=' + $.token;

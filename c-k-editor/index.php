@@ -6,7 +6,7 @@ Route::set('-u/c-k-editor/%s%', function($s = "") use($language, $url, $__c_k_ed
     HTTP::status(404);
     $m = $u = "";
     if (!empty($_FILES['upload'])) {
-        $n = $_FILES['upload']['name'];
+        $n = To::file($_FILES['upload']['name']);
         $x = Path::X($n);
         $c = get_defined_constants(true)['user'];
         if (!$x) {
