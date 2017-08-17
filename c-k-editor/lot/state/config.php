@@ -11,6 +11,6 @@ return [
         ['Styles']
     ],
     'height' => '30em',
-    'filebrowserImageBrowseUrl' => '/' . Extend::state('panel', 'path', 'panel') . '/::g::/asset?layout=0',
-    'filebrowserImageUploadPath' => ASSET
+    'filebrowserImageBrowseUrl' => '/' . Extend::state('panel', 'path', 'panel') . '/::g::/asset',
+    'filebrowserImageUploadPath' => ASSET . DS . '%{extension}%' . DS . '%{name}%.%{extension}%'
 ];

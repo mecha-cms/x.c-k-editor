@@ -1,5 +1,5 @@
 (function($, CKE) {
-    var lang = typeof $.languages.$.__.panel.CKE.stylesSet !== "undefined" ? $.languages.$.__.panel.CKE.stylesSet : {},
+    var lang = typeof $language.__.panel.CKE.stylesSet !== "undefined" ? $language.__.panel.CKE.stylesSet : {},
         formats = [],
         formats_tags = [
             // Block Style(s)

@@ -1,8 +1,8 @@
 (function($, CKE) {
     if (!$) return;
-    var forms = $.forms,
-        lot = forms.$,
-        CM = forms.CM || {},
+    var form = $.__form__,
+        lot = form.$,
+        CM = form.CM || {},
         src = (document.currentScript || {}).src || "",
         config = src ? {
             customConfig: src.replace(/\/[^/?]*(\?.*)?$/g, '/config.min.js$1'),
@@ -19,13 +19,13 @@
             }
         }
     }
-    forms.CKE = {};
+    form.CKE = {};
     for (i in lot) {
-        forms.CKE[i] = {};
+        form.CKE[i] = {};
         for (j in lot[i]) {
             k = lot[i][j];
             if (k.nodeName.toLowerCase() === 'textarea' && k.classList.contains('editor') && k.getAttribute('data-type') === 'HTML') {
-                forms.CKE[i][j] = CKE.replace(k, config);
+                form.CKE[i][j] = CKE.replace(k, config);
             }
         }
     }

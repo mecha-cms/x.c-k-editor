@@ -14,7 +14,13 @@ Route::set('-u/c-k-editor/%s%', function($s = "") use($language, $url, $__c_k_ed
         } else if (isset($c[u($s) . '_X']) && strpos(',' . $c[u($s) . '_X'] . ',', ',' . $x . ',') === false) {
             $m = $language->message_error_file_x($x);
         }
-        $f = $__c_k_editor['filebrowserImageUploadPath'] . DS . $n;
+        $f = __replace__($__c_k_editor['filebrowserImageUploadPath'], [
+            'date' => new Date,
+            'extension' => Path::X($n),
+            'hash' => Guardian::hash(),
+            'id' => uniqid(),
+            'name' => Path::N($n)
+        ]);
         if (file_exists($f)) {
             $m = $language->message_error_file_exist($n);
         }

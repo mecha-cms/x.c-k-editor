@@ -1,5 +1,9 @@
 @import url('../../../../panel/lot/asset/css/panel.min.css?v=2');
 
+*:focus {
+  outline: 0;
+}
+
 pre {
   padding: .5em 1em;
   background: #000;
