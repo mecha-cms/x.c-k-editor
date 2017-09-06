@@ -4,7 +4,7 @@ description: CKEditor is a free, open-source HTML text editor designed to simpli
 author: Taufik Nurrohman
 type: Markdown
 link: http://ckeditor.com
-version: 1.4.0
+version: 1.4.1
 dependency: {"extension":["asset","panel"]}
 ...
 

@@ -25,7 +25,9 @@
         for (j in lot[i]) {
             k = lot[i][j];
             if (k.nodeName.toLowerCase() === 'textarea' && k.classList.contains('editor') && k.getAttribute('data-type') === 'HTML') {
-                form.CKE[i][j] = CKE.replace(k, config);
+                form.CKE[i][j] = CKE.replace(k, config).on('blur', function() {
+                    this.updateElement(); // update `<textarea>` value on every “blur” event
+                });
             }
         }
     }
