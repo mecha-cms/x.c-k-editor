@@ -23,14 +23,20 @@ Route::set('-u/c-k-editor/%s%', function($s = "") use($language, $url, $__c_k_ed
         ]);
         if (file_exists($f)) {
             $m = $language->message_error_file_exist($n);
+        } else if (!empty($_FILES['upload']['error'])) {
+            $m = $language->message_info_file_upload[$_FILES['upload']['error']];
         }
         if (!$m) {
+            if (!is_dir($d = dirname($f))) {
+                mkdir($d, 0777, true);
+            }
             move_uploaded_file($_FILES['upload']['tmp_name'], $f);
             $u = To::url($f);
         }
     } else {
         $m = To::sentence($language->error);
     }
+    HTTP::status(302);
     echo '<script>window.parent.CKEDITOR.tools.callFunction(' . Request::get('CKEditorFuncNum') . ',\'' . $u . '\'' . ($m ? ',\'' . $m . '\'' : "") . ');</script>';
     exit;
 }, 1);
