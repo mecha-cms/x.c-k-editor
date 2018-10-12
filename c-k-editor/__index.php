@@ -19,7 +19,7 @@ Hook::set('on.panel.ready', function() use($__c_k_editor) {
 });
 
 if ($__asset_P && strpos('/' . $url->path . '/', '/' . trim($__asset_P, '/') . '/') !== false) {
-    if (($__i = Request::get('CKEditor')) && ($__fn = Request::get('CKEditorFuncNum', "")) !== "") {
+    if (($__i = HTTP::get('CKEditor')) && ($__fn = HTTP::get('CKEditorFuncNum', "")) !== "") {
         Config::set('panel.layout', 0);
         $__id = uniqid();
         Hook::set('panel.a.' . $__asset_B . 's', function() {
