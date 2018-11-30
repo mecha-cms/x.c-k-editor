@@ -14,7 +14,7 @@ return [
             'groups' => ['basicstyles']
         ], [
             'name' => 'paragraph',
-            'groups' => ['list', 'blocks']
+            'groups' => ['list', 'blocks', 'horizontalrule']
         ], [
             'name' => 'links',
             'groups' => ['links']
@@ -25,8 +25,8 @@ return [
             'name' => 'clipboard',
             'groups' => ['undo']
         ], [
-            'name' => 'value',
-            'groups' => $user->status === 1 ? ['mode'] : [] // Only user with status `1` can edit HTML source
+            'name' => 'data',
+            'groups' => ['mode']
         ]
 	  ],
 	  'removeButtons' => 'Outdent,Indent,Anchor,Strike,Underline,Paste,Copy,Cut',
@@ -34,6 +34,7 @@ return [
     'image2_alignClasses' => ['align-left', 'align-center', 'align-right'],
     'image2_captionedClass' => 'image',
     'linkShowAdvancedTab' => false,
-    'disallowedContent' => 'noscript script style',
-    'extraPlugins' => 'sourcedialog' . (Extend::exist('block') ? ',placeholder' : "")
+    'removeDialogFields' => 'table:info:txtBorder;table:info:cmbAlign;table:info:txtCellSpace;table:info:txtCellPad',
+    'disallowedContent' => 'article aside base body footer head header hgroup html iframe link main nav noscript script style title',
+    'extraPlugins' => 'confighelper,placeholder,sourcedialog'
 ];
