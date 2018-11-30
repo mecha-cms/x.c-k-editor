@@ -72,6 +72,7 @@
                         }
                     }
                 }, config || {}, true);
+                reset.call(t); // Destroy first to prevent duplicate instance
                 t.editor.$ = CKEDITOR.replace(t, config);
                 // Update `<textarea>` value on every “blur” event
                 t.editor.$.on("blur", function() {
