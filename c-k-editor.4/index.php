@@ -4,7 +4,7 @@ if ($active = Config::get('page.editor') === basename(__DIR__)) {
     require __DIR__ . DS . 'lot' . DS . 'worker' . DS . 'worker' . DS . 'route.php';
 }
 
-Hook::set('on.ready', function() use($active, $config, $token, $url) {
+Hook::set('on.ready', function() use($active, $config, $url, $user) {
     if ($active && (strpos($url->path, '/::s::/') !== false || Config::get('panel.desk.body.tab.file.field.page[type].value') === 'HTML')) {
         require __DIR__ . DS . '_index.php';
     }

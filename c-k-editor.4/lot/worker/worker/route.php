@@ -15,7 +15,7 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
     $state = extend([
         'language' => explode('-', $config->language, 2)[0],
         'filebrowserImageBrowseUrl' => $url . '/' . $path . '/::g::/asset' . ($user->status !== 1 ? '/' . $user->key : ""),
-        'filebrowserImageUploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $token,
+        'filebrowserImageUploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token,
         'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.css') . '?' . dechex(filemtime($css))
     ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
     if (!Extend::exist('block')) {
@@ -34,7 +34,7 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
 Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) use($language, $user) {
     HTTP::status(200);
     $out = ['uploaded' => false];
-    if (!Guardian::check($token)) {
+    if ($token !== $user->token) {
         $out['error']['message'] = $language->message_error_token;
     }
     $blob = HTTP::files('upload');
