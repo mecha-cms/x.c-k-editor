@@ -1,8 +1,8 @@
 (function(win, doc) {
 
     var form = doc.forms && doc.forms.editor,
-        contents = ['data[content]', 'page[content]'],
-        types = ['data[type]', 'page[type]'];
+        contents = ['data[content]', 'file[?][page][content]', 'page[content]'],
+        types = ['data[type]', 'file[?][page][type]', 'page[type]'];
 
     function hide() {
         types.forEach(function(name) {

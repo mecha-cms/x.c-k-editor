@@ -2,5 +2,5 @@
 type: YAML
 ...
 
-o_page-editor:
+o_page_editor:
   c-k-editor.4: CKEditor 4
