@@ -14,7 +14,7 @@ return [
             'groups' => ['basicstyles']
         ], [
             'name' => 'paragraph',
-            'groups' => ['list', 'blocks', 'horizontalrule']
+            'groups' => ['list', 'blocks']
         ], [
             'name' => 'links',
             'groups' => ['links']
@@ -28,8 +28,8 @@ return [
             'name' => 'data',
             'groups' => ['mode']
         ]
-	  ],
-	  'removeButtons' => 'Outdent,Indent,Anchor,Strike,Underline,Paste,Copy,Cut',
+    ],
+    'removeButtons' => 'Outdent,Indent,Anchor,Strike,Underline,Paste,Copy,Cut',
     'format_tags' => 'p;h3;h4;h5;h6;pre',
     'image2_alignClasses' => ['align-left', 'align-center', 'align-right'],
     'image2_captionedClass' => 'image',
