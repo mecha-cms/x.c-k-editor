@@ -11,10 +11,3 @@ Asset::set($url . '/' . $state['path'] . '/::g::/-/c-k-editor.js', 10.1, [
         return candy($this->url, [$src, abs(crc32($t . $user->token . $config->language))]);
     }
 ]);
-
-if (!empty($state['style']['fonts'][0])) {
-    $s = '<style media="screen">.cke_reset_all,.cke_reset_all *,.cke_reset_all a,.cke_reset_all textarea{font-family:"' . $state['style']['fonts'][0] . '",serif!important}</style>';
-    Hook::set('shield.yield', function($yield) use($s) {
-        return str_replace('</head>', $s . '</head>', $yield);
-    }, 0);
-}

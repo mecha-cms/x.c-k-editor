@@ -55,7 +55,9 @@ Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) use($languag
         $directory = candy(strtr($state['image']['directory'] ?? "", '/', DS), $candy);
         $response = File::push($blob, $path = rtrim(ASSET . ($user->status !== 1 ? DS . $user->key : "") . DS . $directory, DS));
         if ($response === false) {
+            // $out['uploaded'] = true;
             $out['error']['message'] = $language->message_error_file_exist($path . DS . $name);
+            // $out['url'] = To::URL($path . DS . $name);
         } else if (is_int($response)) {
             $out['error']['code'] = $response;
             $out['error']['message'] = $language->message_info_file_push[$response] ?? $language->error . ': ' . $response;
