@@ -1,6 +1,7 @@
 (function(win, doc) {
 
     var form = doc.forms && doc.forms.editor,
+        body = doc.body,
         contents = ['data[content]', 'file[?][page][content]', 'page[content]'],
         types = ['data[type]', 'file[?][page][type]', 'page[type]'];
 
@@ -55,10 +56,17 @@
                 this.editor && this.editor.$ && this.editor.$.destroy();
             }
             function set(config) {
-                var t = this;
+                var t = this,
+                    tt = t.cloneNode(),
+                    height;
+                tt.style.visibility = 'visible';
+                tt.style.display = 'block';
+                body.appendChild(tt);
+                height = tt.offsetHeight; // Get hidden `<textarea>` height
+                tt.parentNode && body.removeChild(tt);
                 config = CKEDITOR.tools.extend({
                     uiColor: hex(win.getComputedStyle(t).getPropertyValue('background-color')),
-                    height: t.offsetHeight * 1.5,
+                    height: height * 1.5,
                     // Allow all content
                     allowedContent: {
                         $1: {
