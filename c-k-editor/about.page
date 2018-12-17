@@ -1,12 +1,10 @@
 ---
-title: CKEditor
-description: >
-  CKEditor is a free, open-source HTML text editor designed to simplify website content creation.
-  It’s a WYSIWYG editor that brings common word processor features directly to your web pages.
+title: CKEditor 5
+description: Rich text editor of tomorrow, available today.
 author: Taufik Nurrohman
 type: Markdown
-link: http://ckeditor.com
-version: 1.4.2
+link: https://ckeditor.com
+version: 2.0.0
 
 dependency:
   extension:
@@ -14,6 +12,12 @@ dependency:
     - panel
 ...
 
-This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Common_ tab with _CKEditor_.
+CKEditor 5 provides every type of WYSIWYG editing solution imaginable. From editors similar to _Google Docs_ and _Medium_, to _Slack_ or _Twitter_ like applications, all is possible within a single editing framework.
+
+**Builds** are ready-to-use solutions to common editing needs. Every build can be customized to include a completely custom set of features. Features are flexible. You can write a custom feature once, and reuse it everywhere!
+
+This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field with _CKEditor 5_.
+
+*[WYSIWYG]: What You See Is What You Get
 
 <!-- block:donate -->

@@ -2,31 +2,5 @@
 type: YAML
 ...
 
-o_editor:
-  c-k-editor: CKEditor
-
-__:
-  panel:
-    CKE:
-      stylesSet:
-        code: Kode
-        del: Hapus
-        h1: Judul 1
-        h2: Judul 2
-        h3: Judul 3
-        h4: Judul 4
-        h5: Judul 5
-        h6: Judul 6
-        img_center: Gambar (tengah)
-        img_left: Gambar (kiri)
-        img_right: Gambar (kanan)
-        ins: Sisip
-        kbd: Papan Kunci
-        mark: Tanda
-        p: Paragraf
-        pre: Blok
-        small: Kecil
-        sub: Subskrip
-        sup: Superskrip
-        table_border: Tabel (garis batas)
-        var: Variabel
+o_page_editor:
+  c-k-editor: CKEditor 5
