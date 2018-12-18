@@ -165,7 +165,7 @@
                 reset.call(t); // Destroy first to prevent duplicate instance
                 ClassicEditor.create(t, config || {}).then(function(editor) {
                     var editable = editor.ui.view.editable.editableElement;
-                    editable.style.minHeight = height + 'px';
+                    editable.style.minHeight = (height * 1.5) + 'px';
                     editable.style.resize = 'vertical';
                     editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
                         return new UploadAdapter(loader, editor.config.get('uploadUrl'), editor.t);
