@@ -1,0 +1,20 @@
+/* Editor Style(s) */
+.field .ck.ck-editor__editable_inline {padding:6px 24px}
+.field .ck-widget.image figcaption {margin:0}
+.field .ck-widget.image.align-left {
+  float:left;
+  margin-right:1.5em;
+}
+.field .ck-widget.image.align-right {
+  float:right;
+  margin-left:1.5em;
+}
+.field .ck-widget.image.align-center {
+  float:none;
+  text-align:center;
+}
+.field .ck-widget.ck-widget table {
+  margin:0;
+  width:100%;
+  text-align:left;
+}

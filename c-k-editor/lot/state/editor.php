@@ -38,7 +38,25 @@ return [
         ]
     ],
     'image' => [
-        'toolbar' => ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
-        'styles' => ['alignLeft', 'full', 'alignRight']
+        'toolbar' => ['imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight'],
+        'styles' => [
+            [
+                'name' => 'full',
+                'icon' => 'full',
+                'isDefault' => true
+            ], [
+                'name' => 'alignLeft',
+                'icon' => 'left',
+                'className' => 'align-left'
+            ], [
+                'name' => 'alignCenter',
+                'icon' => 'center',
+                'className' => 'align-center'
+            ], [
+                'name' => 'alignRight',
+                'icon' => 'right',
+                'className' => 'align-right'
+            ]
+        ]
     ]
 ];
