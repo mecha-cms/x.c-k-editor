@@ -49,10 +49,10 @@ Images that will be inserted to the editor content will use the CSS class as fol
 You might need to add some special treatment to the CSS classes that have been added to the HTML markup:
 
 ~~~ .css
-.image {}
-.image.align-left {float:left}
-.image.align-center {float:none}
-.image.align-right {float:right}
+.image {display:block}
+.align-left {float:left}
+.align-center {float:none}
+.align-right {float:right}
 ~~~
 
 *[WYSIWYG]: What You See Is What You Get

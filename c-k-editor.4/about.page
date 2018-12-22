@@ -16,6 +16,43 @@ CKEditor is a free, open-source HTML text editor designed to simplify website co
 
 This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field with _CKEditor 4_.
 
+Images that will be inserted to the editor content will use the CSS class as follows:
+
+~~~ .html
+<!-- `full` -->
+<figure class="image">
+  <img alt="" src="path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `alignLeft` -->
+<figure class="image align-left">
+  <img alt="" src="path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `alignCenter` -->
+<figure class="image align-center">
+  <img alt="" src="path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `alignRight` -->
+<figure class="image align-right">
+  <img alt="" src="path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+~~~
+
+You might need to add some special treatment to the CSS classes that have been added to the HTML markup:
+
+~~~ .css
+.image {display:block}
+.align-left {float:left}
+.align-center {float:none}
+.align-right {float:right}
+~~~
+
 *[WYSIWYG]: What You See Is What You Get
 
 <!-- block:donate -->

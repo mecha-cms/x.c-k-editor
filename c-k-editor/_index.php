@@ -2,8 +2,8 @@
 
 $t = filemtime(__FILE__);
 $state = Extend::state('panel');
-Asset::set(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.css', 10);
-Asset::set(__DIR__ . DS . 'lot' . DS . 'worker' . DS . 'ckeditor5-build-classic' . DS . 'ckeditor.js', 10);
+Asset::set(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.min.css', 10);
+Asset::set(__DIR__ . DS . 'lot' . DS . 'worker' . DS . '@ckeditor' . DS . 'ckeditor.js', 10);
 Asset::set($url . '/' . $state['path'] . '/::g::/-/c-k-editor.js', 10.1, [
     'src' => function($src) use($config, $t, $user) {
         $t += filemtime(__DIR__ . DS . 'lot' . DS . 'worker' . DS . 'worker' . DS . 'route.php');

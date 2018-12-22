@@ -1,0 +1,1 @@
+CKEDITOR.stylesSet.add('default', []);

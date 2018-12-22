@@ -1,20 +1,31 @@
 /* Editor Style(s) */
-.field .ck.ck-editor__editable_inline {padding:6px 24px}
+.field {
+  --z:16px; /* text size */
+  --x:24px; /* h-space */
+  --y:24px; /* v-space */
+}
+.field .ck-widget.image,
+.field .ck-widget.media,
+.field .ck-widget.table {
+  margin:var(--y) 0 0;
+  text-align:inherit;
+}
+.field .ck-widget.image figure,
 .field .ck-widget.image figcaption {margin:0}
 .field .ck-widget.image.align-left {
-  float:left;
-  margin-right:1.5em;
+  margin-right:var(--x);
+  margin-bottom:calc(var(--z) / 2);
 }
 .field .ck-widget.image.align-right {
-  float:right;
-  margin-left:1.5em;
+  margin-bottom:calc(var(--z) / 2);
+  margin-left:var(--x);
 }
-.field .ck-widget.image.align-center {
-  float:none;
-  text-align:center;
-}
-.field .ck-widget.ck-widget table {
+.field .ck-widget.media iframe,
+.field .ck-widget.table table {
   margin:0;
   width:100%;
-  text-align:left;
+  text-align:inherit;
 }
+.field .ck.ck-editor__editable_inline {padding:var(--y) var(--x)}
+.field .ck.ck-editor__editable_inline > :first-child {margin-top:0}
+.field .ck.ck-editor__editable_inline > :last-child {margin-bottom:0}

@@ -13,11 +13,11 @@ return [
             'name' => 'basicstyles',
             'groups' => ['basicstyles']
         ], [
-            'name' => 'paragraph',
-            'groups' => ['list', 'blocks']
-        ], [
             'name' => 'links',
             'groups' => ['links']
+        ], [
+            'name' => 'paragraph',
+            'groups' => ['list', 'blocks']
         ], [
             'name' => 'insert',
             'groups' => ['insert']
@@ -29,7 +29,9 @@ return [
             'groups' => ['mode']
         ]
     ],
-    'removeButtons' => 'Outdent,Indent,Anchor,Strike,Underline,Paste,Copy,Cut',
+    'removeButtons' => 'Anchor,Copy,Cut,Indent,Outdent,Paste,Strike,Subscript,Superscript,Underline',
+    // For semantic HTML structure, we use `<h3>` as the largest heading level
+    // because we already have `<h1>` as the site title and `<h2>` as the page title
     'format_tags' => 'p;h3;h4;h5;h6;pre',
     'image2_alignClasses' => ['align-left', 'align-center', 'align-right'],
     'image2_captionedClass' => 'image',

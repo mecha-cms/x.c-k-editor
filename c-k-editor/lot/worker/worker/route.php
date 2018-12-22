@@ -14,11 +14,12 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
     ]);
     $state = extend([
         'language' => explode('-', $config->language, 2)[0],
-        'uploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token
+        'simpleUpload' => [
+            'uploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token
+        ]
     ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
     $script = file_get_contents($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor.min.js');
-    // TODO
-    echo str_replace('{}).then(', '{' . t(json_encode($state), '{', '}') . '}).then(', $script);
+    echo str_replace('Object.assign({},', 'Object.assign(' . json_encode($state) . ',', $script);
     return;
 });
 

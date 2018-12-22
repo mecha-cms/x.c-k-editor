@@ -16,7 +16,7 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
         'language' => explode('-', $config->language, 2)[0],
         'filebrowserImageBrowseUrl' => $url . '/' . $path . '/::g::/asset' . ($user->status !== 1 ? '/' . $user->key : ""),
         'filebrowserImageUploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token,
-        'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.css') . '?' . dechex(filemtime($css))
+        'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.min.css') . '?' . dechex(filemtime($css))
     ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
     if (!Extend::exist('block')) {
         if (array_key_exists('removePlugins', $state)) {
