@@ -4,7 +4,7 @@ $path = Extend::state('panel', 'path');
 $r = __DIR__ . DS . '..' . DS . '..' . DS . '..';
 
 // Dynamic resource
-Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
+Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $r) {
     extract(Lot::get());
     $i = 60 * 60 * 24 * 30 * 12; // 1 Year
     HTTP::type('application/javascript')->header([
@@ -13,20 +13,16 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
         'Expires' => gmdate('D, d M Y H:i:s', time() + $i) . ' GMT'
     ]);
     $state = extend([
+        'customConfig' => false,
+        'stylesSet' => false,
         'language' => explode('-', $config->language, 2)[0],
         'filebrowserImageBrowseUrl' => $url . '/' . $path . '/::g::/asset' . ($user->status !== 1 ? '/' . $user->key : ""),
         'filebrowserImageUploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token,
         'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.min.css') . '?' . dechex(filemtime($css))
     ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
-    if (!Extend::exist('block')) {
-        if (array_key_exists('removePlugins', $state)) {
-            $state['removePlugins'] .= ',placeholder';
-        } else {
-            $state['removePlugins'] = 'placeholder';
-        }
-    }
-    $script = file_get_contents($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor.min.js');
-    echo str_replace('{uiColor:', '{' . t(json_encode($state), '{', '}') . ',uiColor:', $script);
+    $c = 'CKEDITOR.config=CKEDITOR.tools.extend(CKEDITOR.config||{},' . json_encode($state) . ',true);';
+    $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
+    echo $c . $script;
     return;
 });
 
