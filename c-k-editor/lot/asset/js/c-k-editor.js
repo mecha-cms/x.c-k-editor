@@ -54,9 +54,18 @@
                 reset.call(t); // Destroy first to prevent duplicate instance
                 config = Object.assign({}, config || {});
                 ClassicEditor.create(t, config).then(function(editor) {
-                    var editable = editor.ui.view.editable.editableElement;
+                    var source = editor.sourceElement,
+                        editable = editor.ui.view.editable.editableElement;
                     editable.style.minHeight = (height * 1.5) + 'px';
                     editable.style.resize = 'vertical';
+                    // Fake placeholder
+                    editable.setAttribute('placeholder', source.placeholder);
+                    function isEmpty() {
+                        var v = this.textContent;
+                        this.classList[v ? 'remove' : 'add']('ck-editor__empty');
+                    }
+                    isEmpty.call(editable);
+                    editable.addEventListener("blur", isEmpty, false);
                     t.editor.$ = editor;
                 });
                 return hide(), t.editor.$;

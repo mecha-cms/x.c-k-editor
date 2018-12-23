@@ -26,6 +26,14 @@
   width:100%;
   text-align:inherit;
 }
-.field .ck.ck-editor__editable_inline {padding:var(--y) var(--x)}
-.field .ck.ck-editor__editable_inline > :first-child {margin-top:0}
-.field .ck.ck-editor__editable_inline > :last-child {margin-bottom:0}
+.field .ck.ck-editor__editable {padding:var(--y) var(--x)}
+.field .ck.ck-editor__editable > :first-child {margin-top:0}
+.field .ck.ck-editor__editable > :last-child {margin-bottom:0}
+
+/* Fake Placeholder */
+.field .ck.ck-editor__editable.ck-editor__empty:not(:focus)::before {
+  content:attr(placeholder);
+  display:block;
+  opacity:.5;
+  pointer-events:none;
+}
