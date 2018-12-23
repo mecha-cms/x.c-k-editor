@@ -4,7 +4,7 @@ $path = Extend::state('panel', 'path');
 $r = __DIR__ . DS . '..' . DS . '..' . DS . '..';
 
 // Dynamic resource
-Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
+Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $r) {
     extract(Lot::get());
     $i = 60 * 60 * 24 * 30 * 12; // 1 Year
     HTTP::type('application/javascript')->header([
@@ -18,8 +18,9 @@ Route::set($path . '/::g::/-/c-k-editor.js', function() use($path, $r) {
             'uploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token
         ]
     ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
-    $script = file_get_contents($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor.min.js');
-    echo str_replace('Object.assign({},', 'Object.assign(' . json_encode($state) . ',', $script);
+    $c = 'ClassicEditor.defaultConfig=' . json_encode($state) . ';';
+    $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
+    echo $c . $script;
     return;
 });
 
