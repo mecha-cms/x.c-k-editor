@@ -1,0 +1,1 @@
+CKEDITOR.plugins.add("codetag",{icons:"code",lang:"en,id",init:function(a){var e=new CKEDITOR.style({element:"code"});a.attachStyleStateChange(e,function(e){!a.readOnly&&a.getCommand("wrapCode").setState(e)}),a.addCommand("wrapCode",new CKEDITOR.styleCommand(e)),a.ui.addButton&&a.ui.addButton("Code",{label:a.lang.codetag.toolbar,command:"wrapCode",toolbar:"insert"})}});

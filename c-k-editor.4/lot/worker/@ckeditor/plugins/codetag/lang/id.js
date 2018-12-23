@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("codetag","id",{toolbar:"Kode",title:"Kode"});
