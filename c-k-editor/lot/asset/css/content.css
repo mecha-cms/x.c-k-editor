@@ -11,7 +11,10 @@
   text-align:inherit;
 }
 .field .ck-widget.image figure,
-.field .ck-widget.image figcaption {margin:0}
+.field .ck-widget.image figcaption {
+  margin:0;
+  text-align:center;
+}
 .field .ck-widget.image.align-left {
   margin-right:var(--x);
   margin-bottom:calc(var(--z) / 2);
