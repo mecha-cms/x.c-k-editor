@@ -16,6 +16,10 @@ CKEditor is a free, open-source HTML text editor designed to simplify website co
 
 This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field with _CKEditor 4_.
 
+### Notes
+
+#### Style
+
 Images that will be inserted to the editor content will use the CSS class as follows:
 
 ~~~ .html
@@ -44,7 +48,7 @@ Images that will be inserted to the editor content will use the CSS class as fol
 </figure>
 ~~~
 
-You might need to add some special treatment to the CSS classes that have been added to the HTML markup:
+You might need to add some special treatment to the generated HTML markup:
 
 ~~~ .css
 .image {display:block}
@@ -52,6 +56,16 @@ You might need to add some special treatment to the CSS classes that have been a
 .align-center {float:none}
 .align-right {float:right}
 ~~~
+
+#### Language
+
+All of the language files stored in `lot\worker\@ckeditor\lang` and `lot\worker\@ckeditor\plugins\*\lang` folders are removed except `en.js` and `id.js`.
+
+#### Code
+
+The `codetag` plugin is a modified version of [this plugin](https://ckeditor.com/cke4/addon/codeTag) with some tweak to make it possible to toggle the `<code>` tag based on [this pull](https://github.com/danielsvane/ckeditor-code-tag/pull/1).
+
+The `codesnippet` plugin has been modified so that it doesn’t use any syntax highlighter features. The main function of this plugin have been simplified just to insert a piece of code snippet with some HTML classes. You can apply the external syntax highlighter plugin on the public view of the site later. If you don’t like it, you can download the original `codesnippet` plugin [here](https://ckeditor.com/docs/ckeditor4/latest/examples/codesnippet.html) to replace the current `codesnippet` plugin.
 
 *[WYSIWYG]: What You See Is What You Get
 

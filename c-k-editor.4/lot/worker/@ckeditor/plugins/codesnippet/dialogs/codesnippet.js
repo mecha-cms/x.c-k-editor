@@ -1,0 +1,5 @@
+/**
+ * @license Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+"use strict";!function(){CKEDITOR.dialog.add("codeSnippet",function(e){var t,n=e._.codesnippet.langs,i=e.lang.codesnippet,o=document.documentElement.clientHeight,a=[];a.push([e.lang.common.notSet,""]);for(t in n)a.push([n[t],t]);var s=CKEDITOR.document.getWindow().getViewPaneSize(),d=Math.min(s.width-70,800),l=s.height/1.5;return 650>o&&(l=o-220),{title:i.title,minHeight:200,contents:[{id:"info",elements:[{id:"code",type:"textarea",label:i.codeContents,setup:function(e){this.setValue(e.data.code)},commit:function(e){e.setData("code",this.getValue())},required:!0,validate:CKEDITOR.dialog.validate.notEmpty(i.emptySnippetError),inputStyle:"cursor:auto;min-width:"+d+"px;height:"+l+"px;tab-size:4;text-align:left;","class":"cke_source"},{id:"lang",type:"select",label:i.language,items:a,setup:function(e){e.ready&&e.data.lang&&this.setValue(e.data.lang)},commit:function(e){e.setData("lang",this.getValue())}}]}]}})}();
