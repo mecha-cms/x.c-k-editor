@@ -5,7 +5,7 @@ $r = __DIR__ . DS . '..' . DS . '..' . DS . '..';
 
 // Dynamic resource
 Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $r) {
-    extract(Lot::get());
+    extract(Lot::get(), EXTR_SKIP);
     $i = 60 * 60 * 24 * 30 * 12; // 1 Year
     HTTP::type('application/javascript')->header([
         'Pragma' => 'private',
