@@ -11,7 +11,7 @@ return [
         ['Blockquote', 'CodeSnippet'],
         ['Image', 'Table' /* , 'HorizontalRule' */ ],
         ['Undo', 'Redo'],
-        ['Sourcedialog']
+        ['Source']
     ],
     // For semantic HTML structure, we use `<h3>` as the largest heading level
     // because we already have `<h1>` as the site title and `<h2>` as the page title
@@ -32,5 +32,5 @@ return [
     'linkShowAdvancedTab' => false,
     'removeDialogFields' => 'table:info:txtBorder;table:info:cmbAlign;table:info:txtCellSpace;table:info:txtCellPad',
     'disallowedContent' => 'article aside base body footer head header hgroup html iframe link main nav noscript script style title',
-    'extraPlugins' => 'codetag,codesnippet,confighelper,horizontalrule,sourcedialog'
+    'extraPlugins' => 'codetag,codesnippet,confighelper,horizontalrule,sourcearea'
 ];
