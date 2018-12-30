@@ -4,7 +4,7 @@ description: The battle-tested WYSIWYG HTML editor, when you need even more feat
 author: Taufik Nurrohman
 type: Markdown
 link: https://ckeditor.com
-version: 1.5.1
+version: 1.5.2
 
 dependency:
   extension:

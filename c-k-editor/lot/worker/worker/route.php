@@ -17,7 +17,7 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
         'simpleUpload' => [
             'uploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token
         ]
-    ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
+    ], Extend::state('c-k-editor:editor'));
     $c = 'ClassicEditor.defaultConfig=' . json_encode($state) . ';';
     $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
     echo $c . $script;
@@ -25,7 +25,8 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
 });
 
 // Image upload path
-Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) use($language, $user) {
+Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) {
+    extract(Lot::get(), EXTR_SKIP);
     HTTP::status(200);
     $out = ['uploaded' => false];
     if ($token !== $user->token) {

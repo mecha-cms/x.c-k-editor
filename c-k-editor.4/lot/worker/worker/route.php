@@ -19,7 +19,7 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
         'filebrowserImageBrowseUrl' => $url . '/' . $path . '/::g::/asset' . ($user->status !== 1 ? '/' . $user->key : ""),
         'filebrowserImageUploadUrl' => $url . '/' . $path . '/::s::/-/c-k-editor/push/' . $user->token,
         'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.min.css') . '?' . dechex(filemtime($css))
-    ], require $r . DS . 'lot' . DS . 'state' . DS . 'editor.php');
+    ], Extend::state('c-k-editor.4:editor'));
     $c = 'CKEDITOR.config=CKEDITOR.tools.extend(CKEDITOR.config||{},' . json_encode($state) . ',true);';
     $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
     echo $c . $script;
@@ -27,7 +27,8 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
 });
 
 // Image upload path
-Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) use($language, $user) {
+Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) {
+    extract(Lot::get(), EXTR_SKIP);
     HTTP::status(200);
     $out = ['uploaded' => false];
     if ($token !== $user->token) {
