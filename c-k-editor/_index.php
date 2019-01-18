@@ -9,7 +9,7 @@ Asset::set($url . '/' . $state['path'] . '/::g::/-/c-k-editor.min.js', 10.2, [
         $t += filemtime(__DIR__ . DS . 'lot' . DS . 'worker' . DS . 'worker' . DS . 'route.php');
         $t += filemtime(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . basename($src));
         $t += filemtime(__DIR__ . DS . 'lot' . DS . 'state' . DS . 'editor.php');
-        return candy($this->url, [$src, abs(crc32($t . $user->token . $config->language))]);
+        return candy($this->state['url'], [$src, abs(crc32($t . $user->token . $config->language))]);
     }
 ]);
 
