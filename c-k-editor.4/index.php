@@ -9,14 +9,12 @@ Hook::set('on.ready', function() use($active) {
     if ($active && (strpos($url->path, '/::s::/') !== false || (!empty($_page) && $_page->type === 'HTML'))) {
         require __DIR__ . DS . '_index.php';
     }
-}, 2);
+}, 2.1);
 
 if ($active && HTTP::get('CKEditor') && strpos($url->path . '/', Extend::state('panel', 'path') . '/::g::/asset/') === 0) {
     Hook::set('on.ready', function() use($language, $url) {
         $i = HTTP::get('CKEditorFuncNum', false);
-        Hook::set('shield.yield', function($yield) use($i) {
-            return '<script>function insert(u){var w=window,o=w.opener;o.focus(),o.CKEDITOR.tools.callFunction(' . $i . ',u),w.close()}</script>' . $yield;
-        });
+        Asset::script('function insert(u){var w=window,o=w.opener;o.focus(),o.CKEDITOR.tools.callFunction(' . $i . ',u),w.close()}');
         Config::set('panel.nav', "");
         Config::set('panel.desk.header', "");
         Config::reset('panel.+.file.tool');

@@ -3,8 +3,8 @@ title: CKEditor 5
 description: Rich text editor of tomorrow, available today.
 author: Taufik Nurrohman
 type: Markdown
-link: https://ckeditor.com
-version: 2.0.3
+link: 'https://ckeditor.com'
+version: 2.1.0
 
 dependency:
   extension:

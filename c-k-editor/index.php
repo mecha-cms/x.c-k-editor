@@ -9,4 +9,4 @@ Hook::set('on.ready', function() use($active) {
     if ($active && (strpos($url->path, '/::s::/') !== false || (!empty($_page) && $_page->type === 'HTML'))) {
         require __DIR__ . DS . '_index.php';
     }
-}, 2);
+}, 2.1);

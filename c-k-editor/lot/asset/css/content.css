@@ -34,7 +34,7 @@
 .field .ck.ck-editor__editable > :last-child {margin-bottom:0}
 
 /* Fake Placeholder */
-.field .ck.ck-editor__editable.ck-editor__empty:not(:focus)::before {
+.field .ck.ck-editor__editable.ck-editor__empty:not(:focus):not(:focus-within)::before {
   content:attr(placeholder);
   display:block;
   opacity:.5;
