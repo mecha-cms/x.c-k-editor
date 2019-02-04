@@ -4,11 +4,11 @@ description: The battle-tested WYSIWYG HTML editor, when you need even more feat
 author: Taufik Nurrohman
 type: Markdown
 link: 'https://ckeditor.com'
-version: 1.6.0
+version: 1.6.1
 
 dependency:
   extension:
-    - panel
+  - panel
 ...
 
 CKEditor is a free, open-source HTML text editor designed to simplify website content creation. It’s a WYSIWYG editor that brings common word processor features directly to your web pages.

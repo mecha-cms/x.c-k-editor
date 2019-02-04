@@ -4,11 +4,11 @@ description: Rich text editor of tomorrow, available today.
 author: Taufik Nurrohman
 type: Markdown
 link: 'https://ckeditor.com'
-version: 2.1.0
+version: 2.1.1
 
 dependency:
   extension:
-    - panel
+  - panel
 ...
 
 CKEditor 5 provides every type of WYSIWYG editing solution imaginable. From editors similar to _Google Docs_ and _Medium_, to _Slack_ or _Twitter_ like applications, all is possible within a single editing framework.

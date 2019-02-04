@@ -40,7 +40,7 @@ Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) {
         $state = Extend::state('panel', 'page');
         $candy = [
             'date' => new Date,
-            'extension' => Path::X($name),
+            'x' => Path::X($name),
             'hash' => Guardian::hash(),
             'id' => sprintf('%u', time()),
             'name' => Path::N($name),
