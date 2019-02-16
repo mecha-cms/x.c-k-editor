@@ -17,7 +17,7 @@ CKEditor 5 provides every type of WYSIWYG editing solution imaginable. From edit
 
 This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field with _CKEditor 5_.
 
-### Notes
+### Feature
 
 #### Style
 
@@ -52,15 +52,26 @@ Images that will be inserted to the editor content will use the CSS class as fol
 You might need to add some special treatment to the generated HTML markup:
 
 ~~~ .css
-.image {display:block}
-.align-left {float:left}
-.align-center {float:none}
-.align-right {float:right}
+.image {
+  display: block;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-center {
+  float: none;
+}
+
+.align-right {
+  float: right;
+}
 ~~~
 
 #### Language
 
-All of the language files stored in `lot\worker\@ckeditor\translations` folder are removed except `en.js` and `id.js`.
+All of the language files that stored in `.\lot\extend\c-k-editor\lot\worker\@ckeditor\translations` folder are removed except `en.js` and `id.js`.
 
 *[WYSIWYG]: What You See Is What You Get
 
