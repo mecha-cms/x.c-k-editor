@@ -13,7 +13,7 @@ Hook::set('on.ready', function() use($active) {
 
 if ($active && HTTP::get('CKEditor') && strpos($url->path . '/', Extend::state('panel', 'path') . '/::g::/asset/') === 0) {
     Hook::set('on.ready', function() use($language, $url) {
-        $i = HTTP::get('CKEditorFuncNum', false);
+        $i = HTTP::get('CKEditorFuncNum');
         Asset::script('function insert(u){var w=window,o=w.opener;o.focus(),o.CKEDITOR.tools.callFunction(' . $i . ',u),w.close()}');
         Config::set('panel.nav', "");
         Config::set('panel.desk.header', "");
@@ -23,7 +23,7 @@ if ($active && HTTP::get('CKEditor') && strpos($url->path . '/', Extend::state('
                 return [
                     'hidden' => !is_file($file),
                     'x' => strpos(',' . IMAGE_X . ',', ',' . Path::X($file) . ',') === false,
-                    'link' => $i !== false ? 'javascript:insert(' . json_encode(To::URL($file)) . ')' : null
+                    'link' => isset($i) ? 'javascript:insert(' . json_encode(To::URL($file)) . ')' : null
                 ];
             },
             'title' => false,
