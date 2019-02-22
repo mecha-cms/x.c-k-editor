@@ -21,7 +21,7 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
         'contentsCss' => To::URL($css = $r . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'content.min.css') . '?' . dechex(filemtime($css))
     ], Extend::state('c-k-editor.4:editor'));
     $c = 'CKEDITOR.config=CKEDITOR.tools.extend(CKEDITOR.config||{},' . json_encode($state) . ',true);';
-    $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
+    $script = content($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js') ?: "";
     echo $c . $script;
     return;
 });

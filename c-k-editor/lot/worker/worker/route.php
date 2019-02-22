@@ -19,7 +19,7 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
         ]
     ], Extend::state('c-k-editor:editor'));
     $c = 'ClassicEditor.defaultConfig=' . json_encode($state) . ';';
-    $script = File::open($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js')->read("");
+    $script = content($r . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'c-k-editor' . $alt . '.js') ?: "";
     echo $c . $script;
     return;
 });
