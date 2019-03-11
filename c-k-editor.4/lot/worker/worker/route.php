@@ -4,7 +4,7 @@ $path = Extend::state('panel', 'path');
 $r = __DIR__ . DS . '..' . DS . '..' . DS . '..';
 
 // Dynamic resource
-Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $r) {
+Route::set(x($path) . '/::g::/-/c-k-editor([^/]+)\.js', function($alt = "") use($path, $r) {
     extract(Lot::get(), EXTR_SKIP);
     $i = 60 * 60 * 24 * 30 * 12; // 1 Year
     HTTP::type('application/javascript')->header([
@@ -27,7 +27,7 @@ Route::set($path . '/::g::/-/c-k-editor%s%.js', function($alt = "") use($path, $
 });
 
 // Image upload path
-Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) {
+Route::set(x($path) . '/::s::/-/c-k-editor/push/([^/]+)', function($token) {
     extract(Lot::get(), EXTR_SKIP);
     HTTP::status(200);
     $out = ['uploaded' => false];
@@ -43,7 +43,7 @@ Route::set($path . '/::s::/-/c-k-editor/push/%s%', function($token) {
         $candy = [
             'date' => new Date,
             'x' => Path::X($name),
-            'hash' => Guardian::hash(),
+            'hash' => Guard::hash(),
             'id' => sprintf('%u', time()),
             'name' => Path::N($name),
             'uid' => uniqid()
